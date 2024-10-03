@@ -37,7 +37,7 @@ const Footer = () => {
     ];
 
     return (
-        <div className="bg-center backdrop-grayscale  select-none bg-no-repeat bg-cover bg-jeweline lg:pb-28 md:pb-24 sm:pb-16 pb-12 lg:pt-10 md:pt-8 sm:pt-4 pt-3 lg:p-8 md:p-5 sm:p-3 p-1">
+        <div className="bg-center backdrop-grayscale  select-none bg-no-repeat bg-cover bg-jeweline lg:pb-28 md:pb-24 sm:pb-16 pb-12 lg:pt-10 md:pt-8 sm:pt-4 pt-3 lg:p-8 md:p-5 sm:p-3 p-3">
           <ul className="grid md:grid-cols-4 grid-cols-1  md:bg-opacity-0 sm:bg-opacity-30 md:backdrop-blur-none sm:backdrop-blur-md md:py-0 sm:py-4 sm:grid-cols-2 or md:gap-0 sm:gap-5 gap-3 justify-center sm:justify-between lg:mx-8 lg:my-8 md:mx-6 md:my-6 md:pl-0 sm:pl-12 sm:mx-4 sm:my-4 mx-3 my-3 items-start">
 
 {/* Logos */}
@@ -51,8 +51,8 @@ const Footer = () => {
 
 {/* Information */}
 <li className='text-left md:order-2 sm:order-3 order-2'>
-    <h2 className='font-semibold lg:text-xl md:text-lg  sm:text-[12pt] text-[9pt] md:pb-4 pb-3'>Information</h2>
-    <ul className='lg:text-base md:text-[9pt]  sm:text-[8pt] text-[6pt]'>
+    <h2 className='font-semibold lg:text-xl md:text-lg  sm:text-[12pt] text-[10pt] md:pb-4 pb-3'>Information</h2>
+    <ul className='lg:text-base md:text-[9pt]  sm:text-[8pt] text-[7pt]'>
         <NavLink to='/'><li>About us</li></NavLink>
         <NavLink to='/'><li>Contact us</li></NavLink>
         <NavLink to='/'><li>Terms & Conditions</li></NavLink>
@@ -64,8 +64,8 @@ const Footer = () => {
 
 {/* Lorem ipsum */}
 <li className='text-left md:order-3 sm:order-2 order-3'>
-    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[9pt] md:pb-4 pb-3'>Lorem ipsum</h2>
-    <ul className='lg:text-base md:text-[9pt] sm:text-[8pt] text-[6pt]'>
+    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[10pt] md:pb-4 pb-3'>Lorem ipsum</h2>
+    <ul className='lg:text-base md:text-[9pt] sm:text-[8pt] text-[7pt]'>
         <NavLink to='/'>
             <li className='flex lg:max-w-60 lg:w-60 md:w-44 sm:w-40 w-32 justify-start items-start lg:gap-2 md:gap-3 sm:gap-2 gap-2'>
                 <span><TfiEmail className='lg:mt-[6px] md:mt-[5px] sm:mt-[3pt] mt-[2pt] lg:h-4 lg:w-5 md:h-3 md:w-3 sm:w-2 sm:h-2' /></span>
@@ -87,8 +87,8 @@ const Footer = () => {
 
 {/* Newsletter Signup */}
 <li className='text-left md:order-4 sm:order-4 order-4 '>
-    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[9pt] md:pb-4 pb-3'>Newsletter Signup</h2>
-    <ul className='lg:max-w-72 lg:w-72 md:w-56 sm:w-48 w-full lg:text-base md:text-[9pt] sm:text-[8pt] text-[6pt]'>
+    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[10pt] md:pb-4 pb-3'>Newsletter Signup</h2>
+    <ul className='lg:max-w-72 lg:w-72 md:w-56 sm:w-48 w-full lg:text-base md:text-[9pt] sm:text-[8pt] text-[7pt]'>
         <li>Subscribe to our newsletter and get 10% off your first purchase</li>
     </ul>
 
@@ -109,13 +109,13 @@ const Footer = () => {
                 className='bg-transparent flex-grow md:pl-3 sm:pl-2 text-gray-800 pl-2 lowercase 
                  w-auto sm:w-44 md:w-[160px] 
                 focus-visible:outline-none  focus-visible:bg-transparent
-                 md:p-2 sm:p-1 p-3 lg:text-base md:text-[8pt] sm:text-[7pt] text-[8pt] 
+                 md:p-2 sm:p-1 p-3 lg:text-base md:text-[8pt] sm:text-[8pt] text-[8pt] 
                  h-auto'
             />
             <button
                 type="submit"
                 aria-label="Subscribe to Newsletter"
-                className='lg:text-base md:text-[8pt] sm:text-[7pt] text-[8pt] 
+                className='lg:text-base md:text-[8pt] sm:text-[8pt] text-[8pt] 
                 font-medium px-2 p-1
                 bg-[#d9d9d9] transition 
                 focus:outline-none  h-auto'
