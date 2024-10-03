@@ -83,7 +83,7 @@ const Trending = ({ trending, topviwe }) => {
 
                                 <li className='
                                 lg:p-8 md:p-6 sm:p-4 p-2 
-                                lg:h-[500px] md:h-72 sm:h-48 h-36
+                                lg:h-[500px] md:h-72 sm:h-48 h-40
                                 lg:w-80 md:w-72 sm:w-48 w-[120px]
                                 bg-white relative'>
                                     <div>
@@ -101,7 +101,7 @@ const Trending = ({ trending, topviwe }) => {
                                         key={detailprice[visibleItemIndex].id}
                                         className='
                                             lg:p-8 md:p-6 sm:p-4 p-2 
-                                            lg:h-[500px] md:h-72 sm:h-48 h-36
+                                            lg:h-[500px] md:h-72 sm:h-48 h-40
                                             lg:w-80 md:w-72 sm:w-48 w-[120px]
                                             bg-white relative'
                                     >
@@ -122,7 +122,7 @@ const Trending = ({ trending, topviwe }) => {
                                             key={data.id}
                                             className='
                                             lg:p-8 md:p-6 sm:p-4 p-2 
-                                            lg:h-[500px] md:h-72 sm:h-48 h-36
+                                            lg:h-[500px] md:h-72 sm:h-48 h-40
                                             lg:w-80 md:w-72 sm:w-48 w-[120px]
                                             bg-white relative'
                                         >

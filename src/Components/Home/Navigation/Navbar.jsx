@@ -154,7 +154,7 @@ const Navbar = () => {
                             onMouseOver={searchFocus}
                             onChange={(e) => setSearch(e.target.value)}
                             autoComplete='off'
-                            className='bg-[#f2e8e9] carate-[#f2e8e9] md:text-base sm:text-sm text-xs placeholder:font-light sm:w-auto w-32 lg:w-72 px-3 md:py-1 py-0 outline-0'
+                            className='bg-[#f2e8e9] carate-[#f2e8e9] md:text-base sm:text-sm text-xs placeholder:font-light w-auto lg:w-72 px-3 md:py-1 py-0 outline-0'
                             placeholder="Search Products..."
                         />
                         <button type='submit'>
