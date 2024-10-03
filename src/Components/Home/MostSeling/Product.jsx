@@ -4,7 +4,7 @@
 const Product = ({ heading,image, description, date }) => {
 
   return (
-    <div className="md:m-3 sm:m-2 m-2 drop-shadow-xl w-full shadow-xl flex flex-col items-center justify-center">
+    <div className="md:m-3 sm:m-2 m-1 drop-shadow-xl w-auto shadow-xl flex flex-col items-center justify-center">
       
       <div className="h-auto w-auto bg-[#d9d9d9] md:p-3 p-2 md:pb-0  pb-0 md:pt-4 pt-3">
         <div className="h-full flex justify-center items-center drop-shadow-xl w-auto md:border-2 border-[1px] border-b-0 md:border-b-0 border-white">
@@ -12,12 +12,12 @@ const Product = ({ heading,image, description, date }) => {
         </div>
       </div>
 
-      <div className="bg-white md:p-3 p-2 md:pt-0 pt-0 w-auto flex-grow">
+      <div className="bg-white md:p-3 sm:p-1 p-0 md:pt-0 pt-0 w-auto flex-grow">
        
         <div className="w-auto lg:p-x-5 lg:py-5 lg:pl-6 
                                md:p-x-4 md:py-4 md:pl-5
                                sm:p-x-3 sm:py-3 sm:pl-4
-                               p-x-1 py-1 pl-2                         
+                               px-1 py-1                        
                                lg:leading-8 md:leading-7 sm:leading-5 leading-3 border-[1px] border-t-0 md:border-2  md:border-t-0 border-[#4d015a]">
           <p className="text-[#7b7979] lg:text-xs md:text-[7pt] sm:text-[6pt] text-[5pt]">By admin on {date}</p>
           <p className="lg:text-[13pt] md:text-[10pt] text-[8pt] pr-1 font-semibold lg:w-auto">{heading}</p>
