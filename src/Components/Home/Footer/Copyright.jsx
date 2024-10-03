@@ -22,7 +22,7 @@ const Copyright = () => {
         {logos.map((logo) => (
           <NavLink key={logo.id} to={logo.path}>
             <li>
-              <logo.icon className="text-xs lg:h-12 md:h-8 sm:h-7 h-5 lg:w-12 md:w-8 sm:w-7 w-5 hover:scale-110 lg:rounded-xl md:rounded-lg sm:rounded-md rounded-[5px] border-[1px] border-spacing-x-0 border-black lg:p-2 md:p-1 sm:p-[3px] p-[2px]" />
+              <logo.icon className="text-xs lg:h-12 md:h-8 sm:h-7 h-6 lg:w-12 md:w-8 sm:w-7 w-6 hover:scale-110 lg:rounded-xl md:rounded-lg sm:rounded-md rounded-[5px] border-[1px] border-spacing-x-0 border-black lg:p-2 md:p-1 sm:p-[3px] p-[2px]" />
             </li>
           </NavLink>
         ))}
@@ -30,7 +30,7 @@ const Copyright = () => {
 
       {/* Copyright text on larger screens and below logo list on smaller screens */}
 
-      <p className="order-2 md:order-1 lg:text-base md:text-[10pt] md:text-left text-center sm:text-[8pt] text-[6pt] font-medium">
+      <p className="order-2 md:order-1 lg:text-base md:text-[10pt] md:text-left text-center sm:text-[8pt] text-[7pt] font-medium">
         Copyright &copy; 2022 Kalles all rights reserved. created by logicPulse
       </p>
     </div>

@@ -58,7 +58,7 @@ const SliderBar = () => {
         <LeftSide />
       </div>
 
-      <div className='absolute inset-0 bg-[#dbd2b7] transform rotate-[-5deg] origin-top-left -left-14'>
+      <div className='absolute inset-0 bg-[#dbd2b7]  transform rotate-[-5deg] origin-top-left -left-14'>
 
         {/* Woman wow reaction image */}
 
@@ -70,7 +70,7 @@ const SliderBar = () => {
         {/* Slider content box */}
 
         <div className='lg:h-96 lg:w-96 md:h-80 md:w-80 sm:h-60 sm:w-60 h-28 w-28 bg-white md:p-3 sm:p-2 p-1 lg:right-52 lg:-bottom-12 md:right-36 md:-bottom-8 
-                rotate-[5deg] sm:right-32 sm:-bottom-8 right-16 -bottom-4 transform absolute shadow-lg '>
+                rotate-[5deg] sm:right-32 sm:-bottom-8 right-20 -bottom-4 transform absolute shadow-lg '>
           <div className='md:border-2 border-[1px]  border-black h-full w-full '>
             <BoxContent msg={msg} bigtitle={title} route={path} />
           </div>

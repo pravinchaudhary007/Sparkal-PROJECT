@@ -106,7 +106,7 @@ const Footer = () => {
                 onMouseOver={inputFocus}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder='Enter Email Address...'
-                className='bg-transparent flex-grow md:pl-3 sm:pl-2 text-gray-800 pl-2 lowercase 
+                className='bg-transparent flex-grow md:pl-3 sm:pl-2 text-white pl-2 lowercase 
                  w-auto sm:w-44 md:w-[160px] 
                 focus-visible:outline-none  focus-visible:bg-transparent
                  md:p-2 sm:p-1 p-3 lg:text-base md:text-[8pt] sm:text-[8pt] text-[8pt] 
