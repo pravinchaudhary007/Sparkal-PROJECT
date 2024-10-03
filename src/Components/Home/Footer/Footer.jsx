@@ -51,7 +51,7 @@ const Footer = () => {
 
 {/* Information */}
 <li className='text-left md:order-2 sm:order-3 order-2'>
-    <h2 className='font-semibold lg:text-xl md:text-lg  sm:text-[12pt] text-[10pt] md:pb-4 pb-3'>Information</h2>
+    <h2 className='font-semibold lg:text-xl md:text-lg  sm:text-[12pt] text-[9pt] md:pb-4 pb-3'>Information</h2>
     <ul className='lg:text-base md:text-[9pt]  sm:text-[8pt] text-[7pt]'>
         <NavLink to='/'><li>About us</li></NavLink>
         <NavLink to='/'><li>Contact us</li></NavLink>
@@ -64,7 +64,7 @@ const Footer = () => {
 
 {/* Lorem ipsum */}
 <li className='text-left md:order-3 sm:order-2 order-3'>
-    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[10pt] md:pb-4 pb-3'>Lorem ipsum</h2>
+    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[9pt] md:pb-4 pb-3'>Lorem ipsum</h2>
     <ul className='lg:text-base md:text-[9pt] sm:text-[8pt] text-[7pt]'>
         <NavLink to='/'>
             <li className='flex lg:max-w-60 lg:w-60 md:w-44 sm:w-40 w-32 justify-start items-start lg:gap-2 md:gap-3 sm:gap-2 gap-2'>
@@ -87,7 +87,7 @@ const Footer = () => {
 
 {/* Newsletter Signup */}
 <li className='text-left md:order-4 sm:order-4 order-4 '>
-    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[10pt] md:pb-4 pb-3'>Newsletter Signup</h2>
+    <h2 className='font-semibold lg:text-xl md:text-lg sm:text-[12pt] text-[9pt] md:pb-4 pb-3'>Newsletter Signup</h2>
     <ul className='lg:max-w-72 lg:w-72 md:w-56 sm:w-48 w-full lg:text-base md:text-[9pt] sm:text-[8pt] text-[7pt]'>
         <li>Subscribe to our newsletter and get 10% off your first purchase</li>
     </ul>
