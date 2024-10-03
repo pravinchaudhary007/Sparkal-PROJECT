@@ -17,11 +17,11 @@ const Product = ({ heading,image, description, date }) => {
         <div className="w-auto lg:p-x-5 lg:py-5 lg:pl-6 
                                md:p-x-4 md:py-4 md:pl-5
                                sm:p-x-3 sm:py-3 sm:pl-4
-                               p-x-2 py-1 pl-3                         
+                               p-x-1 py-1 pl-2                         
                                lg:leading-8 md:leading-7 sm:leading-5 leading-3 border-[1px] border-t-0 md:border-2  md:border-t-0 border-[#4d015a]">
           <p className="text-[#7b7979] lg:text-xs md:text-[7pt] sm:text-[6pt] text-[5pt]">By admin on {date}</p>
           <p className="lg:text-[13pt] md:text-[10pt] text-[8pt] pr-1 font-semibold lg:w-auto">{heading}</p>
-          <p className="lg:text-[9pt] md:text-[8pt] sm:text-[7pt] text-[6pt] pr-1 md:tracking-wider tracking-wide lg:pr-4 md:pr-3 sm:pr-2  lg:leading-5 md:leading-4 leading-[10px] mt-2">{description}</p>
+          <p className="lg:text-[9pt] md:text-[8pt] sm:text-[7pt] text-[6pt]  md:tracking-wider tracking-wide lg:pr-4 md:pr-3 sm:pr-2  lg:leading-5 md:leading-4 leading-[10px] mt-2">{description}</p>
       </div>
     
       </div>
