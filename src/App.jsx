@@ -9,6 +9,9 @@ import Blog from './Components/Pages/Blog/Blog';
 import Error404 from './Components/Error404';
 import { useEffect, useState } from 'react';
 import NetworkError from './Components/NetworkError';
+import Cart from './Components/Pages/Shop/Cart/Cart';
+import Like from './Components/Pages/Like/Like';
+import Account from './Components/Pages/Account/Account';
 
 const App = () => {
 
@@ -42,6 +45,9 @@ const App = () => {
           <Route path='/shop' element={<Shop />} />
           <Route path='/sale' element={<Sale />} />
           <Route path='/blog' element={<Blog />} />
+          <Route path='/like' element={<Like/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/account' element={<Account/>}/>
           <Route path='/menu' element={<SidenavMenu />} />
           <Route path='*' element={<Error404/>}/>
       </Routes>

@@ -1,15 +1,18 @@
 import Header from "../../Home/Navigation/Header";
 import Navbar from "../../Home/Navigation/Navbar";
 
-
 const Blog = () => {
   return (
     <>
-     <Header />
-   <Navbar />
-    <div className="grid place-items-center">Blog</div>
-  </>
-  )
+      <Header />
+      <Navbar />
+      <div className="flex items-center justify-center h-auto min-h-screen">
+        <h1 className="text-xl sm:text-4xl md:text-5xl font-bold text-gray-800">
+          Coming Soon
+        </h1>
+      </div>
+    </>
+  );
 }
 
-export default Blog
+export default Blog;

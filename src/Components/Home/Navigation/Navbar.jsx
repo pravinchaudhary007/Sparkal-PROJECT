@@ -169,10 +169,10 @@ const Navbar = () => {
                         <IoIosSearch className="h-5 w-5 hover:scale-110" />
                     </li>
                     <li onClick={toggleLike}>
-                        {like ? <div className='w-5'><img src={likeicon} alt="Like icon" className='h-5 w-5 hover:scale-110' /></div> : <FaRegHeart className='h-5 w-5 hover:scale-110' />}
+                     <NavLink to={'/like'}>   {like ? <div className='w-5'><img src={likeicon} alt="Like icon" className='h-5 w-5 hover:scale-110' /></div> : <FaRegHeart className='h-5 w-5 hover:scale-110' />}</NavLink>
                     </li>
-                    <li><PiShoppingCartThin className='h-5 w-5 hover:scale-110' /></li>
-                    <li><FaUserCircle className='h-5 w-5 hover:scale-110' /></li>
+                  <li>  <NavLink to={'/cart'}> <PiShoppingCartThin className='h-5 w-5 hover:scale-110' /> </NavLink> </li>
+                    <li><NavLink to={'/account'}> <FaUserCircle className='h-5 w-5 hover:scale-110' /> </NavLink></li>
                 </ul>
             </div>
         </nav>
