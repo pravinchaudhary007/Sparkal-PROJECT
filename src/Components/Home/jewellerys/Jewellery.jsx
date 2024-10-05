@@ -3,7 +3,7 @@ import watch from '../../assets/watch.png'
 import watch_2 from '../../assets/watch2.png'
 import Accessories from '../../assets/Accessories.png'
 import Accessories2 from '../../assets/Accessories2.png'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Jewellery = () => {
@@ -11,7 +11,7 @@ const Jewellery = () => {
   const jewelarys = [
     {
       id: 0,
-      type: "watch",           // only chain , locate 
+      type: "watch",           
       image: chain,
       path:"chain"
     },
@@ -24,18 +24,20 @@ const Jewellery = () => {
     {
       id: 2,
       type: "Accessories",
-      image: watch_2
+      image: watch_2,
+       path :"ring"
     },
     {
       id: 3,
       type: "watch",
       image: Accessories,  
-      path : ''
+      path : 'ring'
     },
     {
       id: 4,
       type: "Accessories",
-      image: Accessories2
+      image: Accessories2,
+      path :"accessory"
     }
   ];
 
@@ -58,7 +60,7 @@ const Jewellery = () => {
             {/* four button  */}
 
             <div className='absolute bottom-0 left-0'>
-              <Link to={`/${path}`}><button className='bg-[#dbd2b7] lg:text-lg md:text-base sm:text-sm text-[7pt]  md:py-3 md:px-12 sm:py-2 sm:px-8 px-3 py-[2px]'>{jewelary.type}</button></Link>
+              <NavLink to={`/${path}`}><button className='bg-[#dbd2b7] lg:text-lg md:text-base sm:text-sm text-[7pt]  md:py-3 md:px-12 sm:py-2 sm:px-8 px-3 py-[2px]'>{jewelary.type}</button></NavLink>
             </div>
           </li>
           )

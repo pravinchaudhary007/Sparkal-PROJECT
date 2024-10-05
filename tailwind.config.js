@@ -22,12 +22,12 @@ export default {
     plugin(function({ addUtilities }) {
       const newUtilities = {
         '.scrollbar-responsive': {
-          'overflow-y': 'auto',
+          'overflow-y': '2px',
           'max-height': '100vh',
         },
         // Add your custom scrollbar styles here
         '::-webkit-scrollbar': {
-          width: '8px',
+          width: 'auto',
         },
         '::-webkit-scrollbar-track': {
           background: '#dbd2b7                                ',

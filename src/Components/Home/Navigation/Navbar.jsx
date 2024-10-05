@@ -119,12 +119,12 @@ const Navbar = () => {
                                 {item}
                             </NavLink>
                             <span
-                                className={`absolute left-0 bottom-0 cursor-default h-0.5 w-full transition-transform duration-300 ease-in-out border-0 
+                                 className={`absolute left-0 bottom-0 cursor-default h-0.5 w-full 
                                     ${activeLink === index 
-                                        ? 'bg-black scale-x-100 opacity-100 duration-0' 
-                                        : hoverLink === index 
-                                        ? 'bg-black scale-x-100 duration-300 ease-in-out opacity-100' 
-                                        : 'bg-gray-200 scale-x-0 opacity-0 transition-all duration-500 ease-in-out'}`}
+                                      ? 'bg-black scale-x-100 opacity-100 duration-0' 
+                                      : hoverLink === index 
+                                      ? 'bg-black scale-x-100 opacity-100 duration-300 ease-in-out' 
+                                      : 'bg-gray-200 scale-x-0 opacity-0 transition-all duration-500 ease-in-out'}`}
                             ></span>
                         </li>
                     ))}

@@ -57,7 +57,7 @@ const GotoTop = () => {
       className={`md:p-2 p-1 md:rounded-md rounded-sm block duration-700 drop-shadow-xl 
                   z-50 lg:bottom-5 md:bottom-4 sm:bottom-3 bottom-5 lg:right-5 md:right-3 sm:right-3 right-5 fixed 
                   ${isGrabbing ? 'cursor-grabbing' : 'cursor-grab'} 
-                  bg-gradient-to-r from-white to-[#dbd2b7] transition-transform 
+                  bg-gradient-to-tl from-white to-[#dbd2b7] transition-transform 
                   transform ${visible ? 'translate-x-0' : 'translate-x-full'}`}
       onMouseDown={() => setIsGrabbing(true)} 
       onMouseUp={() => setIsGrabbing(false)} 
