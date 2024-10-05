@@ -50,7 +50,7 @@ const SidenavMenu = () => {
       </nav>
 
       {/* Use icon & Account */}
-      <div className="absolute left-6 bottom-10 flex justify-center items-center">
+      <div className="absolute left-6 bottom-6 flex justify-center items-center">
         <FaUserCircle className="h-6 w-6" />
         <NavLink  to='/account'>
           <h2 className="py-1 px-2 text-lg">Account</h2>
