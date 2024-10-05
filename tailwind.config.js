@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import plugin from 'tailwindcss/plugin';
+
 export default {
   content: [
     './src/**/*.{js,jsx,ts,tsx}', 
@@ -16,5 +18,30 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addUtilities }) {
+      const newUtilities = {
+        '.scrollbar-responsive': {
+          'overflow-y': 'auto',
+          'max-height': '100vh',
+        },
+        // Add your custom scrollbar styles here
+        '::-webkit-scrollbar': {
+          width: '8px',
+        },
+        '::-webkit-scrollbar-track': {
+          background: '#dbd2b7                                ',
+        },
+        '::-webkit-scrollbar-thumb': {
+          background: '#c4b2a5',
+          borderRadius: '10px',
+        },
+        '::-webkit-scrollbar-thumb:hover': {
+          background: '#a58f84',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    }),
+  ],
 };

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Index from './Index';
 import SidenavMenu from './Components/Home/Navigation/SidenavMenu';
 import GotoTop from './Components/Home/Gotop/GotoTop';
-import Products from './Components/Pages/Product/Products';
+import Products from './Components/Pages/Product/ProductsListing';
 import Shop from './Components/Pages/Shop/Shop';
 import Sale from './Components/Pages/Sale/Sale';
 import Blog from './Components/Pages/Blog/Blog';
