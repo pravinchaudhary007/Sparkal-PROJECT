@@ -8,8 +8,8 @@
 /* Slider thumb (pointer) */
 .range-input::-webkit-slider-thumb {
     appearance: none;
-    width: 16px; /* Increased width for better visibility */
-    height: 16px; /* Increased height for better visibility */
+    width: 12px; /* Increased width for better visibility */
+    height: 12px; /* Increased height for better visibility */
 
     border-radius: 50%;
     background-color: #4A006E; /* Color of the pointer */
@@ -19,7 +19,6 @@
 .range-input::-webkit-slider-thumb:hover{
     appearance: none;
     scale: 110%;
-
     border-radius: 50%;
     background-color: #4A006E; /* Color of the pointer */
     cursor: pointer;
@@ -27,8 +26,8 @@
 }
 
 .range-input::-moz-range-thumb {
-    width: 20px; /* Same width for Firefox */
-    height: 20px; /* Same height for Firefox */
+    width: 12px; /* Same width for Firefox */
+    height: 12px; /* Same height for Firefox */
     border-radius: 50%;
     background-color: #4A006E;
     cursor: pointer;
@@ -37,8 +36,8 @@
 }
 
 .range-input::-ms-thumb {
-    width: 20px; /* Same width for IE/Edge */
-    height: 20px; /* Same height for IE/Edge */
+    width: 12px; /* Same width for IE/Edge */
+    height: 12px; /* Same height for IE/Edge */
     border-radius: 50%;
     background-color: #4A006E;
     cursor: pointer;
