@@ -9,11 +9,11 @@ import likeicon from '../../assets/heart.png';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import SidenavMenu from './SidenavMenu';
+import { useProducts } from '../../Pages/Product/Product/ProductProvider'; 
 
 const Navbar = () => {
     const searchRef = useRef(null);
     const [menu, setMenu] = useState(false);
-    const [like, setLike] = useState(false);
     const [search, setSearch] = useState('');
     const [searchBarVisible, setSearchBarVisible] = useState(false);
     const navigate = useNavigate();
@@ -21,6 +21,7 @@ const Navbar = () => {
     const NavItems = useMemo(() => ['Product', 'Shop', 'Sale', 'Blog'], []);
     const [activeLink, setActiveLink] = useState(null);
     const [hoverLink, sethoverLink] = useState(null);
+    const { likedProducts } = useProducts(); 
 
     useEffect(() => {
         const currentPath = location.pathname;
@@ -50,9 +51,6 @@ const Navbar = () => {
         setSearchBarVisible(false);
     };
 
-    const toggleLike = () => {
-        setLike(prevLike => !prevLike);
-    };
 
     const toggleMenu = () => {
         setMenu(prevMenu => !prevMenu);
@@ -80,7 +78,6 @@ const Navbar = () => {
             <SidenavMenu />
         </Box>
     );
-
 
 
     return (
@@ -119,12 +116,12 @@ const Navbar = () => {
                                 {item}
                             </NavLink>
                             <span
-                                 className={`absolute left-0 bottom-0 cursor-default h-0.5 w-full 
-                                    ${activeLink === index 
-                                      ? 'bg-black scale-x-100 opacity-100 duration-0' 
-                                      : hoverLink === index 
-                                      ? 'bg-black scale-x-100 opacity-100 duration-300 ease-in-out' 
-                                      : 'bg-gray-200 scale-x-0 opacity-0 transition-all duration-500 ease-in-out'}`}
+                                className={`absolute left-0 bottom-0 cursor-default h-0.5 w-full 
+                                    ${activeLink === index
+                                        ? 'bg-black scale-x-100 opacity-100 duration-0'
+                                        : hoverLink === index
+                                            ? 'bg-black scale-x-100 opacity-100 duration-300 ease-in-out'
+                                            : 'bg-gray-200 scale-x-0 opacity-0 transition-all duration-500 ease-in-out'}`}
                             ></span>
                         </li>
                     ))}
@@ -152,9 +149,9 @@ const Navbar = () => {
                     <li onClick={toggleSearch} className={`${searchBarVisible ? 'hidden' : 'block'} sm:hidden`}>
                         <IoIosSearch className="h-5 w-5 hover:scale-110" />
                     </li>
-                    <li onClick={toggleLike}>
+                    <li>
                         <NavLink to={'/like'}>
-                            {like ? (
+                            {likedProducts.length !== 0 ? (
                                 <div className='w-5'><img src={likeicon} alt="Like icon" className='h-5 w-5 hover:scale-110' /></div>
                             ) : (
                                 <FaRegHeart className='h-5 w-5 hover:scale-110' />

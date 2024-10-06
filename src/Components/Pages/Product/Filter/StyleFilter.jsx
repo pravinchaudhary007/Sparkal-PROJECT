@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-const StyleFilter = ({ style, handlestyle }) => {
+const StyleFilter = ({ style, handleStyle }) => {
   const styles = ["None", "Office", "Party", "Wedding", "Traditional", "Everyday"];
 
   const handleStyleClick = (styleType) => {
-    handlestyle({ target: { value: styleType } });
+    handleStyle({ target: { value: styleType } });
   };
 
   return (
@@ -19,11 +19,13 @@ const StyleFilter = ({ style, handlestyle }) => {
               role="checkbox"
               aria-checked={style.includes(type)}
               tabIndex={0}
-              onKeyPress={(e) => {
+              onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault(); 
                   handleStyleClick(type);
                 }
               }}
+              aria-label={`Select ${type} style`}
             >
               <div className={`w-auto h-auto ${style.includes(type) ? 'bg-[#4d015a]' : 'bg-transparent'} absolute inset-0 m-[2px]`} />
             </button>
@@ -38,7 +40,7 @@ const StyleFilter = ({ style, handlestyle }) => {
 // Define prop types for better type safety and documentation
 StyleFilter.propTypes = {
   style: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handlestyle: PropTypes.func.isRequired,
+  handleStyle: PropTypes.func.isRequired,
 };
 
 export default StyleFilter;

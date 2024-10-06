@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const FilterContext = createContext();
@@ -7,15 +6,48 @@ const FilterContext = createContext();
 export const FilterProvider = ({ children }) => {
   const maxPrice = 1000;
 
-  const [Sorted, setSorted] = useState(() => JSON.parse(localStorage.getItem('StoredSorted')) || []);
-  const [style, setstyle] = useState(() => JSON.parse(localStorage.getItem('storedStyle')) || []);
-  const [selectedTypes, setSelectedTypes] = useState(() => JSON.parse(localStorage.getItem('selectedProductTypes')) || []);
-  const [inStock, setInStock] = useState(() => localStorage.getItem('inStock') === 'true');
-  const [outOfStock, setOutOfStock] = useState(() => localStorage.getItem('outOfStock') === 'true');
+  const [sorted, setSorted] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('StoredSorted')) || [];
+    } catch (error) {
+      console.error("Error parsing StoredSorted from localStorage", error);
+      return [];
+    }
+  });
+
+  const [style, setStyle] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('storedStyle')) || [];
+    } catch (error) {
+      console.error("Error parsing storedStyle from localStorage", error);
+      return [];
+    }
+  });
+
+  const [selectedTypes, setSelectedTypes] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('selectedProductTypes')) || [];
+    } catch (error) {
+      console.error("Error parsing selectedProductTypes from localStorage", error);
+      return [];
+    }
+  });
+
+  const [inStock, setInStock] = useState(() => {
+    const savedInStock = localStorage.getItem('inStock');
+    return savedInStock === 'true'; // Explicitly convert to boolean
+  });
+  
+  const [outOfStock, setOutOfStock] = useState(() => {
+    const savedOutOfStock = localStorage.getItem('outOfStock');
+    return savedOutOfStock === 'true'; // Explicitly convert to boolean
+  });
+
   const [price, setPrice] = useState(() => {
     const savedPrice = localStorage.getItem('selectedPrice');
-    return savedPrice ? parseInt(savedPrice) : 70;
+    return savedPrice ? parseInt(savedPrice, 10) : 70; // Explicit radix parameter
   });
+
   const [selectedGender, setSelectedGender] = useState('all');
 
   useEffect(() => {
@@ -24,26 +56,31 @@ export const FilterProvider = ({ children }) => {
     localStorage.setItem('selectedPrice', price);
     localStorage.setItem('selectedProductTypes', JSON.stringify(selectedTypes));
     localStorage.setItem('storedStyle', JSON.stringify(style));
-    localStorage.setItem('StoredSorted', JSON.stringify(Sorted));
-  }, [inStock, outOfStock, price, selectedTypes, style, Sorted]);
+    localStorage.setItem('StoredSorted', JSON.stringify(sorted));
+  }, [inStock, outOfStock, price, selectedTypes, style, sorted]);
 
   const handleClearFilters = () => {
     setSelectedTypes([]);
     setInStock(false);
     setOutOfStock(false);
     setPrice(70);
-    setstyle([]);
+    setStyle([]);
     setSorted([]);
 
-    localStorage.clear();
+    localStorage.removeItem('StoredSorted');
+    localStorage.removeItem('storedStyle');
+    localStorage.removeItem('selectedProductTypes');
+    localStorage.removeItem('selectedPrice');
+    localStorage.removeItem('inStock');
+    localStorage.removeItem('outOfStock');
   };
 
   return (
     <FilterContext.Provider value={{
-      Sorted,
+      sorted,
       setSorted,
       style,
-      setstyle,
+      setStyle,
       selectedTypes,
       setSelectedTypes,
       inStock,
@@ -61,7 +98,6 @@ export const FilterProvider = ({ children }) => {
     </FilterContext.Provider>
   );
 };
-
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const useFilterContext = () => useContext(FilterContext);

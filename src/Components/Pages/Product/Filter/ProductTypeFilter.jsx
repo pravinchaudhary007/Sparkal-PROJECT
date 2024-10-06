@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const ProductTypeFilter = ({ selectedTypes, handleProducttype }) => {
+const ProductTypeFilter = ({ selectedTypes, handleProductTypeChange }) => {
   const productTypes = [
     "Rings", 
     "Earrings", 
@@ -11,7 +11,7 @@ const ProductTypeFilter = ({ selectedTypes, handleProducttype }) => {
   ];
 
   const handleTypeClick = (type) => {
-    handleProducttype({ target: { value: type } });
+    handleProductTypeChange({ target: { value: type } });
   };
 
   return (
@@ -26,11 +26,13 @@ const ProductTypeFilter = ({ selectedTypes, handleProducttype }) => {
               role="checkbox"
               aria-checked={selectedTypes.includes(type)}
               tabIndex={0}
-              onKeyPress={(e) => {
+              onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault(); // Prevent default action
                   handleTypeClick(type);
                 }
               }}
+              aria-label={`Select ${type}`}
             >
               <div className={`w-auto h-auto ${selectedTypes.includes(type) ? 'bg-[#4d015a]' : 'bg-transparent'} absolute inset-0 m-[2px]`} />
             </button>
@@ -42,10 +44,9 @@ const ProductTypeFilter = ({ selectedTypes, handleProducttype }) => {
   );
 };
 
-// Define prop types for better type safety and documentation
 ProductTypeFilter.propTypes = {
   selectedTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handleProducttype: PropTypes.func.isRequired,
+  handleProductTypeChange: PropTypes.func.isRequired,
 };
 
 export default ProductTypeFilter;

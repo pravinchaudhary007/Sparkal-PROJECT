@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Index from './Index';
 import GotoTop from './Components/Home/Gotop/GotoTop';
-
 import Shop from './Components/Pages/Shop/Shop';
 import Sale from './Components/Pages/Sale/Sale';
 import Blog from './Components/Pages/Blog/Blog';
@@ -9,7 +8,8 @@ import Error404 from './Components/Error404';
 import { useEffect, useState } from 'react';
 import NetworkError from './Components/NetworkError';
 import Cart from './Components/Pages/Shop/Cart/Cart';
-import Like from './Components/Pages/Like/Like';
+import Like from './Components/Pages/Product/Product/LikedProducts';
+
 import Account from './Components/Pages/Account/Account';
 import Products from "./Components/Pages/Product/Product/ProductsListing"
 
