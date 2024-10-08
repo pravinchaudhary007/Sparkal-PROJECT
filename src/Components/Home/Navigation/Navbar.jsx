@@ -40,7 +40,7 @@ const Navbar = () => {
     const handleLinkClick = (linkIndex) => {
         setActiveLink(linkIndex);
         navigate(`/${NavItems[linkIndex].toLowerCase()}`);
-        setMenu(false); // Close the menu when a link is clicked
+        setMenu(false); 
     };
 
     const handleSearch = (e) => {
@@ -75,7 +75,7 @@ const Navbar = () => {
 
     const DrawerList = (
         <Box sx={{ width: '250px' }} role="presentation">
-            <SidenavMenu />
+            <SidenavMenu  />
         </Box>
     );
 
@@ -136,7 +136,7 @@ const Navbar = () => {
                         onMouseOver={searchFocus}
                         onChange={(e) => setSearch(e.target.value)}
                         autoComplete='off'
-                        className='bg-[#f2e8e9] caret-[#f2e8e9] md:text-base sm:text-sm text-xs placeholder:font-light w-auto lg:w-72 px-3 md:py-1 py-0 outline-0'
+                        className='bg-[#f2e8e9] caret-[#ff0062] md:text-base sm:text-sm text-xs placeholder:font-light w-auto lg:w-72 px-3 md:py-1 py-0 outline-0'
                         placeholder="Search Products..."
                     />
                     <button type='submit'>

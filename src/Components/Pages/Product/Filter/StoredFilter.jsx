@@ -1,6 +1,7 @@
-import PropTypes from 'prop-types';
+import Checkbox from './Checkbox'; // Adjust the import based on your file structure
 
-const SortByFilter = ({ sorted, handleSortedBy }) => {
+// eslint-disable-next-line react/prop-types
+const SortedFilter = ({ sorted, handleSortedBy }) => {
   const sortOptions = [
     "Best Selling", 
     "Alphabetically, a-z", 
@@ -10,44 +11,28 @@ const SortByFilter = ({ sorted, handleSortedBy }) => {
     "Date, new to old"
   ];
 
-  const handleSortClick = (option) => {
+  const handleSortChange = (option) => {
     handleSortedBy({ target: { value: option } });
   };
 
   return (
     <div>
       <h2 className="font-semibold">Sorted by</h2>
-      <div className="flex flex-col">
+      <div className="flex md:text-base text-sm gap-1 flex-col">
         {sortOptions.map(option => (
-          <label key={option} className="flex items-center cursor-pointer gap-2">
-            <button
-              onClick={() => handleSortClick(option)}
-              className={`w-4 h-4 border-[1px] border-gray-800 rounded-sm flex items-center justify-center relative`}
-              role="checkbox"
-              aria-checked={sorted.includes(option)}
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault(); // Prevent default action
-                  handleSortClick(option);
-                }
-              }}
-              aria-label={`Sort by ${option}`}
-            >
-              <div className={`w-auto h-auto ${sorted.includes(option) ? 'bg-[#4d015a]' : 'bg-transparent'} absolute inset-0 m-[2px]`} />
-            </button>
-            <span className="text-gray-700">{option}</span>
-          </label>
+          <div key={option} className="flex items-center cursor-pointer gap-2">
+            <Checkbox
+              id={option}
+              label={option}
+              // eslint-disable-next-line react/prop-types
+              isChecked={sorted.includes(option)}
+              onChange={() => handleSortChange(option)}
+            />
+          </div>
         ))}
       </div>
     </div>
   );
 };
 
-// Define prop types for better type safety and documentation
-SortByFilter.propTypes = {
-  sorted: PropTypes.arrayOf(PropTypes.string).isRequired,
-  handleSortedBy: PropTypes.func.isRequired,
-};
-
-export default SortByFilter;
+export default SortedFilter;

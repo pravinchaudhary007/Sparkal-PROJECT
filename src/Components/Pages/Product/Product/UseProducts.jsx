@@ -1,53 +1,40 @@
-// hooks/useProducts.js
+import { useMemo, useState } from "react";
+import ring from '../../../assets/watch2.png';
+import watch from '../../../assets/watch.png';
+import Accessories2 from '../../../assets/Accessories2.png';
+import Accessories from  '../../../assets/Accessories.png';
 
-import { useEffect, useMemo, useState } from "react";
-import ring from '../../../assets/watch2.png'; // Update the path according to your project structure
+// Removed unused 'chain' image import
 
 const useProducts = () => {
+  // Default products list using useMemo to prevent recreation on each render
   const defaultProducts = useMemo(() => [
-    { id: 1, image: ring, title: "Product 1", price: 29.99, rating: 4.5, category: 'jewelry', style: 'modern', gender: 'women' },
-    { id: 2, image: ring, title: "Product 2", price: 19.99, rating: 4.0, category: 'jewelry', style: 'classic', gender: 'men' },
-    { id: 3, image: ring, title: "Product 3", price: 39.99, rating: 3.5, category: 'jewelry', style: 'vintage', gender: 'women' },
-    { id: 4, image: ring, title: "Product 4", price: 49.99, rating: 4.8, category: 'jewelry', style: 'modern', gender: 'men' },
-    { id: 5, image: ring, title: "Product 5", price: 59.99, rating: 5.0, category: 'jewelry', style: 'classic', gender: 'women' },
-    { id: 6, image: ring, title: "Product 6", price: 15.99, rating: 3.0, category: 'accessories', style: 'modern', gender: 'baby&kids' },
-    { id: 7, image: ring, title: "Product 7", price: 12.99, rating: 2.8, category: 'accessories', style: 'vintage', gender: 'men' },
-    { id: 8, image: ring, title: "Product 8", price: 79.99, rating: 4.7, category: 'jewelry', style: 'modern', gender: 'women' },
-    { id: 9, image: ring, title: "Product 9", price: 9.99, rating: 2.0, category: 'accessories', style: 'classic', gender: 'men' },
-    { id: 10, image: ring, title: "Product 10", price: 25.99, rating: 3.8, category: 'jewelry', style: 'vintage', gender: 'baby&kids' }
+    { id: 1, image: Accessories, title: "Gold Ring", price: 29999, rating: 4.5, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
+    { id: 2, image: watch, title: "Silver Earrings", price: 21999, rating: 4.0, category: 'jewelry', style: 'classic', gender: 'men', stock: 'out of stock' },
+    { id: 3, image: Accessories2, title: "Diamond Necklace", price: 59999, rating: 4.8, category: 'jewelry', style: 'vintage', gender: 'women', stock: 'in stock' },
+    { id: 4, image: watch, title: "Silver Bracelet", price: 39999, rating: 5.0, category: 'jewelry', style: 'modern', gender: 'men', stock: 'in stock' },
+    { id: 5, image: ring, title: "Toe Ring", price: 24999, rating: 3.5, category: 'jewelry', style: 'classic', gender: 'women', stock: 'out of stock' },
+    { id: 6, image: Accessories, title: "Gold Chain", price: 45999, rating: 4.2, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
+    { id: 7, image: watch, title: "Silver Bangle", price: 32999, rating: 4.7, category: 'jewelry', style: 'vintage', gender: 'men', stock: 'out of stock' },
+    { id: 8, image: ring, title: "Pendant", price: 37999, rating: 4.6, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
+    { id: 9, image: Accessories2, title: "Beaded Anklet", price: 22999, rating: 3.8, category: 'jewelry', style: 'classic', gender: 'baby&kids', stock: 'in stock' },
+    { id: 10, image: Accessories2, title: "Gold Anklet", price: 54999, rating: 5.0, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
+
+    // New products to make it 20
+    { id: 11, image: watch, title: "Wedding Ring", price: 99999, rating: 5.0, category: 'jewelry', style: 'classic', gender: 'men', stock: 'in stock' },
+    { id: 12, image: Accessories2, title: "Gemstone Necklace", price: 84999, rating: 4.9, category: 'jewelry', style: 'vintage', gender: 'women', stock: 'out of stock' },
+    { id: 13, image: Accessories, title: "Silver Chain", price: 29999, rating: 4.3, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
+    { id: 14, image: ring, title: "Gold Earrings", price: 69999, rating: 4.9, category: 'jewelry', style: 'classic', gender: 'women', stock: 'in stock' },
+    { id: 15, image: watch, title: "Platinum Ring", price: 120000, rating: 5.0, category: 'jewelry', style: 'modern', gender: 'men', stock: 'in stock' },
+    { id: 16, image: Accessories2, title: "Diamond Bracelet", price: 110000, rating: 4.9, category: 'jewelry', style: 'classic', gender: 'women', stock: 'out of stock' },
+    { id: 17, image: Accessories, title: "Charm Necklace", price: 62999, rating: 4.5, category: 'jewelry', style: 'vintage', gender: 'women', stock: 'in stock' },
+    { id: 18, image: Accessories, title: "Beaded Bracelet", price: 21999, rating: 3.9, category: 'jewelry', style: 'modern', gender: 'baby&kids', stock: 'in stock' },
+    { id: 19, image: Accessories, title: "Pearl Earrings", price: 79999, rating: 4.8, category: 'jewelry', style: 'classic', gender: 'women', stock: 'out of stock' },
+    { id: 20, image: Accessories2, title: "Silver Anklet", price: 42999, rating: 4.0, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' }
   ], []);
 
-  // Function to get stored products from local storage or fallback to default products
-  const getStoredProducts = () => {
-    const savedProducts = localStorage.getItem("products");
-    if (savedProducts) {
-      try {
-        const parsedProducts = JSON.parse(savedProducts);
-        if (Array.isArray(parsedProducts) && parsedProducts.length > 0) {
-          return parsedProducts; // Return parsed products if it's a valid array and not empty
-        }
-      } catch (error) {
-        console.error("Error parsing stored products:", error);
-      }
-    }
-    return defaultProducts; // Return default if nothing is stored or parsing fails
-  };
-
-  const [products, setProducts] = useState(getStoredProducts());
-
-  // Effect to initialize local storage if it's empty
-  useEffect(() => {
-    const savedProducts = localStorage.getItem("products");
-    if (!savedProducts) {
-      localStorage.setItem("products", JSON.stringify(defaultProducts));
-      setProducts(defaultProducts); // Set products to default as well
-    }
-  }, [defaultProducts]);
-
-  // Effect to update local storage whenever products change
-  useEffect(() => {
-    localStorage.setItem("products", JSON.stringify(products));
-  }, [products]);
+  // Use state for managing products
+  const [products, setProducts] = useState(defaultProducts);
 
   return { products, setProducts };
 };

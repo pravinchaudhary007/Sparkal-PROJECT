@@ -2,12 +2,15 @@ import { useProducts } from './ProductProvider.jsx';
 import Card from './Card.jsx';
 import Header from '../../../Home/Navigation/Header.jsx';
 import Navbar from '../../../Home/Navigation/Navbar.jsx';
+import { NavLink } from 'react-router-dom';
 
 const LikedProducts = () => {
     const { likedProducts } = useProducts();
 
     if (likedProducts.length === 0) {
-        return <> <Header /> <Navbar /> <div className='h-screen flex justify-center items-center'> <p className='font-bold text-4xl '>No liked products found.</p></div> </>
+        return <> <Header /> <Navbar /> <div className='h-screen flex justify-center items-center'> <p className='font-bold text-4xl '>No liked products found.
+        <NavLink to={'/product'} className='text-orange-500'> Add now </NavLink>
+        </p></div> </>
     }
 
     return (

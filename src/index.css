@@ -34,3 +34,33 @@ html {
 }
 
 
+.scrollbar-hidden {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  
+  /* Ensure smooth scrolling */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  .half-star {
+    position: relative;
+    display: inline-block;
+    color: transparent; /* Hide the original star */
+}
+
+.half-star::before {
+    content: '★'; 
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #fbbf24; /* Yellow-500 color */
+}

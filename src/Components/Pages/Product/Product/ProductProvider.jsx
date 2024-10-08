@@ -58,7 +58,6 @@ export const ProductProvider = ({ children, initialProducts = [] }) => {
         setFilteredProducts(filtered);
     };
 
-    // Get liked products based on likes
     const likedProducts = useMemo(() => {
         return products.filter((product) => likes[product.id]);
     }, [products, likes]);

@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
+
 import '../../../CSS/product.css';
 
+// eslint-disable-next-line react/prop-types
 const PriceFilter = ({ price, handlePriceChange, maxPrice }) => {
  
-  const minPrice = 70;
+  const minPrice = 1000;
 
   return (
     <div>
@@ -21,19 +22,13 @@ const PriceFilter = ({ price, handlePriceChange, maxPrice }) => {
           }}
           aria-label="Price range"
         />
-        <div className="flex justify-between">
-          <span>₹{minPrice}</span>
-          <span>₹{price}</span>
+        <div className=" md:text-base text-sm flex gap-1 text-gray-700 justify-between">
+          <span>₹{minPrice} (Min)</span>
+          <span>(Max) ₹{price}</span>
         </div>
       </div>
     </div>
   );
-};
-
-PriceFilter.propTypes = {
-  price: PropTypes.number.isRequired,
-  handlePriceChange: PropTypes.func.isRequired,
-  maxPrice: PropTypes.number.isRequired,
 };
 
 export default PriceFilter;
