@@ -1,4 +1,4 @@
-import { useProducts } from './ProductProvider.jsx';
+import { useProducts } from '../ProductContext/ProductProvider.jsx';
 import Card from './Card.jsx';
 import Header from '../../../Home/Navigation/Header.jsx';
 import Navbar from '../../../Home/Navigation/Navbar.jsx';

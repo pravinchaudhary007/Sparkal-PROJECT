@@ -76,6 +76,7 @@ export const ProductProvider = ({ children, initialProducts = [] }) => {
     );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useProducts = () => {
     const context = useContext(ProductContext);
     if (!context) {

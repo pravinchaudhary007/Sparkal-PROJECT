@@ -1,10 +1,10 @@
-import { useMemo, useState } from "react";
-import { useFilterContext } from "../FilterContext";
+import { useState } from "react";
+import { useFilterContext } from "../FilterContext/FilterContext";
 import Header from "../../../Home/Navigation/Header";
 import Navbar from "../../../Home/Navigation/Navbar";
 import { FaCaretDown } from "react-icons/fa";
 import Card from "./Card";
-import useProducts from "./UseProducts";
+import useProducts from "../ProductContext/UseProducts";
 import Footer from "../../../Home/Footer/Footer";
 import Copyright from "../../../Home/Footer/Copyright";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
@@ -14,11 +14,11 @@ import Box from '@mui/material/Box';
 import SidenavMenu from "../../../Home/Navigation/SidenavMenu";
 
 const Productlisting = () => {
-  const { selectedGender, setSelectedGender } = useFilterContext();
+  const { selectedGender, setSelectedGender, inStock, outOfStock ,price} = useFilterContext();
   const [menu, setMenu] = useState(false);
-  const [filterDrawer, setFilterDrawer] = useState(false); // New state for Filter drawer
-  const { products } = useProducts();
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [filterDrawer, setFilterDrawer] = useState(false); // Drawer state for filter menu
+  const { products } = useProducts(); // Fetch all products
+  const [isDropdownOpen, setDropdownOpen] = useState(false); // State for gender dropdown
 
   const genderOptions = [
     { value: 'all', label: 'All' },
@@ -27,54 +27,70 @@ const Productlisting = () => {
     { value: 'baby&kids', label: 'Baby & Kids' },
   ];
 
+  // Handle gender selection from dropdown
   const handleOptionSelect = (value) => {
     setSelectedGender(value);
     setDropdownOpen(false);
   };
 
-  const filteredProducts = useMemo(() => {
-    return products.filter(product => {
-      return selectedGender === 'all' || product.gender === selectedGender;
-    });
-  }, [products, selectedGender]);
+  // Toggle state for the main menu (on mobile view)
+  const toggleMenu = () => {
+    setMenu((prevMenu) => !prevMenu);
+  };
 
+  // Toggle filter drawer (on mobile view)
+  const toggleFilterDrawer = () => {
+    setFilterDrawer((prev) => !prev);
+  };
+
+  const filteredProducts = products.filter((product) => {
+    // Apply gender filter
+    const genderFilter = selectedGender === "all" || product.gender === selectedGender;
+  
+    // Apply in-stock/out-of-stock filter (if selected)
+    const stockFilter = (inStock && product.stock === "in stock") || 
+                        (outOfStock && product.stock === "out of stock") || 
+                        (!inStock && !outOfStock); // If neither is selected, all products are allowed.
+  
+    const priceFilter = !price ? product.price <= price : product.price >= price ; 
+
+  
+
+    return genderFilter && stockFilter && priceFilter;
+  });
+  
+  
+ 
   const DrawerList = (
     <Box sx={{ width: '250px' }} role="presentation">
       <SidenavMenu />
     </Box>
   );
 
-  const toggleMenu = () => {
-    setMenu(prevMenu => !prevMenu);
-  };
-
-  const toggleFilterDrawer = () => {
-    setFilterDrawer(prev => !prev); 
-  };
-
   return (
     <>
       <header>
         <Header />
-        <div className='sm:block hidden'>
+        <div className="sm:block hidden">
           <Navbar />
         </div>
       </header>
 
-      <main className="lg:px-14 md:px-8 sm:py-8 py-2 bg-[#f4f4f4] flex select-none h-auto items-stretch lg:gap-8 md:gap-4 p-4 sm:pt-4 pt-0 ">
+      <main className="lg:px-14 md:px-8 sm:py-8 py-4 bg-[#f4f4f4] flex select-none h-auto items-stretch lg:gap-8 md:gap-4 p-4 sm:pt-4 pt-0 ">
         <div className="lg:w-[33%] sm:block hidden md:w-[44%] sm:w-[50%] w-full p-4 md:pt-3 sm:pt-3 pt-1 relative">
-          <Filtertoggle className='absolute' />
+          <Filtertoggle className="absolute" />
         </div>
 
         <section className="lg:w-full md:w-full sm:w-full w-full select-none sm:p-2 px-0 ">
           <div className="flex lg:text-lg md:text-base sm:py-0 py-2 justify-between items-center">
             <div className="font-semibold">
               <span className="sm:hidden flex gap-3">
-                <HiOutlineMenuAlt2 onClick={toggleMenu} className='h-6 w-6' aria-label="Toggle menu" />
+                <HiOutlineMenuAlt2 onClick={toggleMenu} className="h-6 w-6" aria-label="Toggle menu" />
                 Products
               </span>
             </div>
             <div className="relative flex justify-center items-center gap-3 text-center">
+              {/* Gender dropdown */}
               <button
                 onClick={() => setDropdownOpen((prev) => !prev)}
                 className="w-full text-center bg-[#4d015a] text-white rounded focus:outline-none"
@@ -107,23 +123,25 @@ const Productlisting = () => {
             </div>
           </div>
 
+          {/* Product grid */}
           <div className="grid grid-cols-2 lg:h-[1090px] md:h-[1024px] sm:h-[820px] h-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:gap-4 gap-2 sm:mt-4 mt-2 overflow-y-scroll scroll-smooth scrollbar-hidden">
             {filteredProducts.length === 0 ? (
               <div className="col-span-full text-center text-gray-500">No products available for the selected filters.</div>
             ) : (
-              filteredProducts.map(product => (
+              filteredProducts.map((product) => (
                 <Card key={product.id} product={product} />
               ))
             )}
           </div>
 
+          {/* Filter Drawer (on mobile) */}
           <Drawer anchor="left" open={filterDrawer} onClose={toggleFilterDrawer}>
             <Box sx={{ width: 250 }}>
-              <Filtertoggle /> 
+              <Filtertoggle />
             </Box>
           </Drawer>
 
-          {/* Drawer for main menu on mobile */}
+          {/* Main Menu Drawer (on mobile) */}
           <Drawer anchor="right" open={menu} onClose={toggleMenu}>
             {DrawerList}
           </Drawer>

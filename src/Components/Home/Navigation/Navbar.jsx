@@ -9,7 +9,7 @@ import likeicon from '../../assets/heart.png';
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
 import SidenavMenu from './SidenavMenu';
-import { useProducts } from '../../Pages/Product/Product/ProductProvider'; 
+import { useProducts } from '../../Pages/Product/ProductContext/ProductProvider'; 
 
 const Navbar = () => {
     const searchRef = useRef(null);

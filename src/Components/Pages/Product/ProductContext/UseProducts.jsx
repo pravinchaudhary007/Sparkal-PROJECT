@@ -19,8 +19,6 @@ const useProducts = () => {
     { id: 8, image: ring, title: "Pendant", price: 37999, rating: 4.6, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
     { id: 9, image: Accessories2, title: "Beaded Anklet", price: 22999, rating: 3.8, category: 'jewelry', style: 'classic', gender: 'baby&kids', stock: 'in stock' },
     { id: 10, image: Accessories2, title: "Gold Anklet", price: 54999, rating: 5.0, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },
-
-    // New products to make it 20
     { id: 11, image: watch, title: "Wedding Ring", price: 99999, rating: 5.0, category: 'jewelry', style: 'classic', gender: 'men', stock: 'in stock' },
     { id: 12, image: Accessories2, title: "Gemstone Necklace", price: 84999, rating: 4.9, category: 'jewelry', style: 'vintage', gender: 'women', stock: 'out of stock' },
     { id: 13, image: Accessories, title: "Silver Chain", price: 29999, rating: 4.3, category: 'jewelry', style: 'modern', gender: 'women', stock: 'in stock' },

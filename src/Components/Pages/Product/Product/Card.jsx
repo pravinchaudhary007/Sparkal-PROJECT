@@ -1,4 +1,4 @@
-import { useProducts } from './ProductProvider.jsx';
+import { useProducts } from '../ProductContext/ProductProvider.jsx';
 import LikeButton from './LikedButton.jsx'
 // eslint-disable-next-line react/prop-types
 const Card = ({ product }) => {
