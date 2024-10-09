@@ -24,7 +24,7 @@ const Card = ({ product }) => {
                         </strike>
                     </p>
 
-                    <p className="mt-1 lg:text-base md:text-sm">
+                    <p className="mt-1 lg:text-base md:text-sm text-xs">
                         {Array.from({ length: 5 }).map((_, index) => {
                             const roundedRating = Math.floor(rating);
                             const isHalfStar = rating - index >= 0.5 && rating - index < 1; // Checks for half star condition
@@ -32,7 +32,7 @@ const Card = ({ product }) => {
                             return (
                                 <span
                                     key={index}
-                                    className={`inline-block ${index < roundedRating ? 'text-yellow-500' : isHalfStar && index === roundedRating ? 'text-yellow-500 half-star' : 'text-yellow-200'
+                                    className={`inline-block text-base ${index < roundedRating ? 'text-yellow-500' : isHalfStar && index === roundedRating ? 'text-yellow-500 half-star' : 'text-yellow-200'
                                         }`}
                                 >
                                     ★

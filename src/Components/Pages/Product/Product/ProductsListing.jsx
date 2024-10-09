@@ -50,11 +50,9 @@ const Productlisting = () => {
     // Apply in-stock/out-of-stock filter (if selected)
     const stockFilter = (inStock && product.stock === "in stock") || 
                         (outOfStock && product.stock === "out of stock") || 
-                        (!inStock && !outOfStock); // If neither is selected, all products are allowed.
+                        (!inStock && !outOfStock); 
   
     const priceFilter = !price ? product.price <= price : product.price >= price ; 
-
-  
 
     return genderFilter && stockFilter && priceFilter;
   });
@@ -124,7 +122,7 @@ const Productlisting = () => {
           </div>
 
           {/* Product grid */}
-          <div className="grid grid-cols-2 lg:h-[1090px] md:h-[1024px] sm:h-[820px] h-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:gap-4 gap-2 sm:mt-4 mt-2 overflow-y-scroll scroll-smooth scrollbar-hidden">
+          <div className="grid grid-cols-2 lg:h-[1090px] md:h-[1024px] sm:h-[820px] h-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:gap-4 gap-2 sm:mt-4 mt-2 overflow-y-scroll sm:pb-0  pb-2 scroll-smooth scrollbar-hidden">
             {filteredProducts.length === 0 ? (
               <div className="col-span-full text-center text-gray-500">No products available for the selected filters.</div>
             ) : (

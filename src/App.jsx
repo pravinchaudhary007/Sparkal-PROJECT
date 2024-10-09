@@ -6,7 +6,7 @@ import Sale from './Components/Pages/Sale/Sale';
 import Blog from './Components/Pages/Blog/Blog';
 import { useEffect, useState } from 'react';
 import Cart from './Components/Pages/Shop/Cart/Cart';
-import Like from './Components/Pages/Product/Product/LikedProducts';
+import WatchlistProducts from './Components/Pages/Product/Product/WatchlistProducts';
 import Account from './Components/Pages/Account/Account';
 import Products from "./Components/Pages/Product/Product/ProductsListing";
 import SidenavMenu from './Components/Home/Navigation/SidenavMenu';
@@ -48,7 +48,7 @@ const App = () => {
               <Route path="/shop" element={<Shop />} />
               <Route path="/sale" element={<Sale />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/like" element={<Like />} />
+              <Route path="/like" element={<WatchlistProducts />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/account" element={<Account />} />
               <Route path="/*" element={<Error404 />} />
