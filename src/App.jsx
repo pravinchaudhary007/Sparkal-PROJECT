@@ -6,7 +6,7 @@ import Sale from './Components/Pages/Sale/Sale';
 import Blog from './Components/Pages/Blog/Blog';
 import Error404 from './Components/error/Error404';
 import { useEffect, useState } from 'react';
-import NetworkError from './Components/Error/NetworkError';
+import NetworkError from './Components/Error/NetworkError'
 import Cart from './Components/Pages/Shop/Cart/Cart';
 import Like from './Components/Pages/Product/Product/LikedProducts';
 import Account from './Components/Pages/Account/Account';
