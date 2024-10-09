@@ -61,8 +61,8 @@ const Productlisting = () => {
         </div>
       </header>
 
-      <main className="lg:px-16 md:px-8 py-8 bg-[#f4f4f4] flex select-none h-auto items-stretch lg:gap-8 md:gap-4 p-4 sm:pt-4 pt-0 ">
-        <div className="lg:w-[33%] sm:block hidden md:w-[44%] sm:w-[50%] w-full p-4 md:pt-3 sm:pt-3 relative">
+      <main className="lg:px-14 md:px-8 sm:py-8 py-2 bg-[#f4f4f4] flex select-none h-auto items-stretch lg:gap-8 md:gap-4 p-4 sm:pt-4 pt-0 ">
+        <div className="lg:w-[33%] sm:block hidden md:w-[44%] sm:w-[50%] w-full p-4 md:pt-3 sm:pt-3 pt-1 relative">
           <Filtertoggle className='absolute' />
         </div>
 
@@ -117,10 +117,9 @@ const Productlisting = () => {
             )}
           </div>
 
-          {/* Drawer for filter on mobile view */}
           <Drawer anchor="left" open={filterDrawer} onClose={toggleFilterDrawer}>
             <Box sx={{ width: 250 }}>
-              <Filtertoggle /> {/* Assuming Filtertoggle is your filter content */}
+              <Filtertoggle /> 
             </Box>
           </Drawer>
 
