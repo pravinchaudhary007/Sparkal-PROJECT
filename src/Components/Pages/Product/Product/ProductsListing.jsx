@@ -49,7 +49,7 @@ const Productlisting = () => {
   };
 
   const toggleFilterDrawer = () => {
-    setFilterDrawer(prev => !prev); // Toggle the filter drawer
+    setFilterDrawer(prev => !prev); 
   };
 
   return (
