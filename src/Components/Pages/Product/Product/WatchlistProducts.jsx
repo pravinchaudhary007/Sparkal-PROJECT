@@ -56,14 +56,14 @@ const WatchlistProducts = () => {
       <Navbar />
       </div>
       <section className="grid justify-center items-center">
-        <div className="lg:mx-8 lg:px-8 md:mx-7 md:px-6 sm:mx-4 sm:px-4 mx-4 px-4 font-semibold flex items-center gap-3  md:py-6 py-4">
+        <div className="lg:mx-8 lg:px-8 md:mx-7 md:px-6 sm:mx-4 sm:px-4 mx-2 px-2 font-semibold flex items-center gap-3  md:py-6 py-2">
           <span className="flex gap-3">
             <HiOutlineMenuAlt2
               onClick={toggleMenu}
-              className="sm:h-6  sm:w-6 h-5 w=5 md:hidden"
+              className="h-6  w-6 md:hidden"
               aria-label="Toggle menu"
             />
-            <p className="font-semibold md:text-xl sm:text-base  text-sm">Watchlist</p>
+            <p className="font-semibold md:text-xl text-base  ">Watchlist</p>
           </span>
         </div>
         <div className="md:p-4 sm:p-0 p-2 bg-transparent min-h-screen">
