@@ -51,13 +51,13 @@ const SliderBar = () => {
   return (
     <section className='relative w-full lg:h-[520px] md:h-[450px] sm:h-[400px] h-44 select-none overflow-hidden bg-line bg-cover bg-center bg-no-repeat'>
       {/* Left Side Arrow */}
-      <button 
+      <div 
         className='absolute md:left-6 sm:left-4 left-3 top-1/2 transform -translate-y-1/2 z-20'
         onClick={handlePrev}
         aria-label="Previous Slide"
       >
         <LeftSide />
-      </button>
+      </div>
 
       <div className='absolute inset-0 bg-[#dbd2b7] transform rotate-[-5deg] origin-top-left -left-14'>
         {/* Woman wow reaction image */}
@@ -75,14 +75,14 @@ const SliderBar = () => {
         </article>
       </div>
 
-      {/* Right Side Arrow */}
-      <button 
+    
+      <div
         className='absolute md:right-6 sm:right-4 right-3 top-1/2 transform -translate-y-1/2 z-20'
         onClick={handleNext}
         aria-label="Next Slide"
       >
         <RightSide />
-      </button>
+      </div>
     </section>
   );
 };
