@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 import NetworkError from './Components/Error/NetworkError';
 import Cart from './Components/Pages/Shop/Cart/Cart';
 import Like from './Components/Pages/Product/Product/LikedProducts';
-
 import Account from './Components/Pages/Account/Account';
 import Products from "./Components/Pages/Product/Product/ProductsListing"
 import SidenavMenu from './Components/Home/Navigation/SidenavMenu';
